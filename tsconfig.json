@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true
+  },
+  "files" :[
+  	"./helper/planehelper.ts"
+  	, "index.ts"
+  	, "colormap.d.ts"
+  ]
+}

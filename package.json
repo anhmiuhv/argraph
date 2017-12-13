@@ -1,0 +1,25 @@
+{
+  "name": "argraph",
+  "version": "1.0.0",
+  "description": "augmented reality visualization helper",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "merge": "ts-merge ./helper/* "
+  },
+  "author": "lin",
+  "license": "MIT",
+  "dependencies": {
+    "@types/d3-scale": "^1.0.10",
+    "@types/three": "^0.84.35",
+    "colormap": "^2.3.0",
+    "d3-scale": "^1.0.7",
+    "three": "^0.88.0"
+  },
+  "devDependencies": {
+    "ts-merge": "^0.5.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  }
+}
