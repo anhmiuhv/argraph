@@ -4,6 +4,9 @@ const three_1 = require("three");
 const texthelper_1 = require("./texthelper");
 var EventHelper;
 (function (EventHelper) {
+    /**
+     * Event callback for graph. show the axis coordinates on the points
+     */
     class GeneralThreeEvent {
         constructor(camera, graph) {
             this.camera = camera;
@@ -49,6 +52,9 @@ var EventHelper;
         }
     }
     EventHelper.GeneralThreeEvent = GeneralThreeEvent;
+    /**
+     * Zoom functions for Augmented Reality graph. Extended from GeneralThreeEvent
+     */
     class ZoomableThreeEvent {
         constructor(camera, graph) {
             this.camera = camera;

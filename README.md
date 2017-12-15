@@ -11,7 +11,13 @@ yarn install
 yarn build (or npm run-script build)
 ```
 
-## How to use this in your project
+## How to generate documentations
+
+```
+npm run-script docs (or yarn docs)
+```
+
+## How to use this in your three.js project
 ```
 npm install argraph
 ```

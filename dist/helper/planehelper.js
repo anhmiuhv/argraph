@@ -4,9 +4,7 @@ const three_1 = require("three");
 const d3_scale_1 = require("d3-scale");
 const texthelper_1 = require("./texthelper");
 /**
- *
- * this class contains the graph the informations for a graph
- *
+ * The 3D graph object
  */
 class Graph {
     constructor(graph, delta, scale, allplane, scaleFactor) {
@@ -47,9 +45,8 @@ exports.Graph = Graph;
 var PlaneHelper;
 (function (PlaneHelper) {
     /**
-     *
-     *  This function generate the axis plane, all variables are integers, low < high or function fail
-     *
+     * Generate Graph from graph info
+     * @param graphinfo The GraphInfo
      */
     function addplane(graphinfo) {
         let lowx = Math.floor(graphinfo.lowx);
@@ -137,9 +134,14 @@ var PlaneHelper;
     }
     PlaneHelper.addplane = addplane;
     /**
-     *
-     * helper function to generate a pair of planes
-     *
+     * generate plane helper
+     * @param deltax how big it is on x axis
+     * @param deltay how big it is on y axis
+     * @param scalex the d3 scale object for x axis
+     * @param scaley the d3 scale object for y axis
+     * @param posfront position of one plane
+     * @param posback position of other plane
+     * @param xy If this is the top and bottom plane
      */
     function generatePlane(deltax, deltay, scalex, scaley, posfront, posback, xy) {
         const material = new three_1.MeshBasicMaterial({ color: 0x0074D9, transparent: true, opacity: 0.3, side: three_1.DoubleSide });
@@ -198,9 +200,10 @@ var PlaneHelper;
     }
     const scaledelta = 7;
     /**
-     *
-     * generate the label for the y-axis. Take in all the side planes
-     *
+     * Add the y axis to the graph plane
+     * @param therest the y axis graph plane
+     * @param scaleFactor the scale factor of the graph object
+     * @param title
      */
     function addyaxis(therest, scaleFactor, title = "y") {
         var invert = (1 / scaledelta) / scaleFactor;
@@ -240,9 +243,10 @@ var PlaneHelper;
     }
     PlaneHelper.addyaxis = addyaxis;
     /**
-     *
-     * generate label for the x and z axis. Take in the top and bottom plane
-     *
+     * Add the x and z axis to the graph plane
+     * @param topbottom the topbottom axis plane
+     * @param scaleFactor the scale factor of the graph object
+     * @param title the title for x and z axis
      */
     function addxzaxis(topbottom, scaleFactor, title = { x: 'x', z: 'z' }) {
         const invert = (1 / scaledelta) / scaleFactor;

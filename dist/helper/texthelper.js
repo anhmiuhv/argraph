@@ -2,6 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const three_1 = require("three");
 const DELTA_SCALEFACTOR = 11;
+/**
+ * Generate a sprite with text specified in the message
+ * @param message the text
+ * @param parameters the text graphical options
+ * 	Supported fields: "fontface", "fontsize", "scaleFactor", "depthTest"
+ */
 function makeTextSprite(message, parameters = {}) {
     if (parameters === undefined)
         parameters = {};

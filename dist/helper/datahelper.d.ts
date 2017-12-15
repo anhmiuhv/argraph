@@ -1,4 +1,7 @@
 import { Vector3 } from 'three';
+/**
+ * Scatterplot info class
+ */
 export declare class GraphInfo {
     lowx: number;
     highx: number;
@@ -11,6 +14,9 @@ export declare class GraphInfo {
     getAllLimits(): number[];
     scaler(value: number, axis?: Axis): number;
 }
+/**
+ * Surface plot info object
+ */
 export declare class SurfaceInfo extends GraphInfo {
     height: number;
     width: number;

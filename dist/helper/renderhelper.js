@@ -47,6 +47,14 @@ var RenderHelper;
         graph.graph.add(particles);
     }
     RenderHelper.renderPoints = renderPoints;
+    /**
+     * render a 3D surface plot with color
+     * @param scene The Scene of you program
+     * @param surfaceinfo The surface info
+     * @param graph The Graph object in your scene
+     * @param params Graphical params
+     * Supported fields: "colormap"
+     */
     function renderSurface(scene, surfaceinfo, graph, params = {}) {
         function getColor(hex) {
             var color = new three_1.Color(hex);

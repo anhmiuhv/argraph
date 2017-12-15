@@ -2,9 +2,7 @@ import { Scene, Group, Vector3 } from 'three';
 import { ScaleContinuousNumeric } from 'd3-scale';
 import { GraphInfo } from './datahelper';
 /**
- *
- * this class contains the graph the informations for a graph
- *
+ * The 3D graph object
  */
 export declare class Graph {
     graph: Group;
@@ -30,21 +28,22 @@ export declare class Graph {
 }
 export declare namespace PlaneHelper {
     /**
-     *
-     *  This function generate the axis plane, all variables are integers, low < high or function fail
-     *
+     * Generate Graph from graph info
+     * @param graphinfo The GraphInfo
      */
     function addplane(graphinfo: GraphInfo): Graph;
     /**
-     *
-     * generate the label for the y-axis. Take in all the side planes
-     *
+     * Add the y axis to the graph plane
+     * @param therest the y axis graph plane
+     * @param scaleFactor the scale factor of the graph object
+     * @param title
      */
     function addyaxis(therest: Group[], scaleFactor: number, title?: string): void;
     /**
-     *
-     * generate label for the x and z axis. Take in the top and bottom plane
-     *
+     * Add the x and z axis to the graph plane
+     * @param topbottom the topbottom axis plane
+     * @param scaleFactor the scale factor of the graph object
+     * @param title the title for x and z axis
      */
     function addxzaxis(topbottom: Group[], scaleFactor: number, title?: {
         x: string;

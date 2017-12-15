@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const three_1 = require("three");
 const d3_scale_1 = require("d3-scale");
+/**
+ * Scatterplot info class
+ */
 class GraphInfo {
     constructor(data) {
         this.vertices = data.map((d) => {
@@ -47,6 +50,9 @@ class GraphInfo {
     }
 }
 exports.GraphInfo = GraphInfo;
+/**
+ * Surface plot info object
+ */
 class SurfaceInfo extends GraphInfo {
     /**
      * create a surface info object from height map matrix

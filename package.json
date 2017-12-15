@@ -6,8 +6,10 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "merge": "ts-merge ./helper/* "
+    "merge": "ts-merge ./helper/* ",
+    "docs" : "typedoc helper --out docs/ --tsconfig tsconfig.json"
   },
+  "keywords": [  "augmented reality" , "data visualizations"]
   "author": "lin",
   "license": "MIT",
   "dependencies": {

@@ -2,6 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var AnimationHelper;
 (function (AnimationHelper) {
+    /**
+     * This helps show the closes x,y,z axis
+     * @param graph Graph object
+     * @param camera Camera object
+     */
     function hideAxis(graph, camera) {
         let all = graph.allplane();
         hidex(all.slice(0, 2), camera);
