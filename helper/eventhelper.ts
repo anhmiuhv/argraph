@@ -14,6 +14,9 @@ export interface ThreeEvent extends Event {
 
 
 export namespace EventHelper {
+    /**
+     * Event callback for graph. show the axis coordinates on the points
+     */
     export class GeneralThreeEvent {
         INTERSECTED: Mesh;
         camera: Camera;
@@ -68,6 +71,9 @@ export namespace EventHelper {
             }
         }
 
+        /**
+         * Zoom functions for Augmented Reality graph. Extended from GeneralThreeEvent
+         */
         export class ZoomableThreeEvent {
             
             prevDiff: number;

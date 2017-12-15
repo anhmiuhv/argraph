@@ -47,7 +47,14 @@ export namespace RenderHelper {
         graph.graph.add(particles);
     }
 
-
+    /**
+     * render a 3D surface plot with color
+     * @param scene The Scene of you program
+     * @param surfaceinfo The surface info
+     * @param graph The Graph object in your scene
+     * @param params Graphical params
+     * Supported fields: "colormap"
+     */
     export function renderSurface(scene: Scene, surfaceinfo: SurfaceInfo, graph: Graph, params: any = {}) {
         function getColor(hex: string) {
             var color = new Color(hex);

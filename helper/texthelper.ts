@@ -1,7 +1,12 @@
 import {Vector2, Texture, CanvasTexture, SpriteMaterial, Sprite } from 'three';
 
 const DELTA_SCALEFACTOR = 11;
-
+/**
+ * Generate a sprite with text specified in the message
+ * @param message the text
+ * @param parameters the text graphical options
+ * 	Supported fields: "fontface", "fontsize", "scaleFactor", "depthTest"
+ */
 export function makeTextSprite( message: string, parameters: any = {} )
 {
 	if ( parameters === undefined ) parameters = {};

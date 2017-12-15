@@ -2,6 +2,12 @@ import { Object3D, Camera, Points, Geometry } from 'three';
 import { Graph } from './planehelper'
 
 export namespace AnimationHelper {
+
+	/**
+	 * This helps show the closes x,y,z axis
+	 * @param graph Graph object
+	 * @param camera Camera object
+	 */
 	export function hideAxis(graph: Graph, camera: Camera) {
 		let all = graph.allplane();
 		hidex(all.slice(0, 2), camera);

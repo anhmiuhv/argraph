@@ -1,6 +1,9 @@
 import { Vector3, Matrix3 } from 'three'
 import  { scaleLinear } from 'd3-scale';
 
+/**
+ * Scatterplot info class
+ */
 export class GraphInfo {
 	lowx: number;
 	highx: number;
@@ -57,6 +60,9 @@ export class GraphInfo {
 	}
 }
 
+/**
+ * Surface plot info object
+ */
 export class SurfaceInfo extends GraphInfo{
 	height: number;
 	width: number;
