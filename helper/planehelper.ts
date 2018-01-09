@@ -253,14 +253,24 @@ export namespace PlaneHelper {
 
 	const scaledelta = 7;
 
-	
+	/**
+	 * Add axis to the graph
+	 * @param graph the graph
+	 * @param title title, default to 'x, 'y', 'z'
+	 */
+	export function addaxis(graph: Graph, title = {x:'x', y: 'y', z:'z'}){
+		addyaxis(graph.therest(), graph.scaleFactor, title.y)
+		addxzaxis(graph.topbottom(), graph.scaleFactor, title)
+		
+	}
+
 	/**
 	 * Add the y axis to the graph plane
 	 * @param therest the y axis graph plane
 	 * @param scaleFactor the scale factor of the graph object
 	 * @param title 
 	 */
-	export function addyaxis(therest: Group[], scaleFactor: number, title = "y") {
+	function addyaxis(therest: Group[], scaleFactor: number, title = "y") {
 		var invert = (1 / scaledelta)  / scaleFactor;
 		for (let i of therest) {
 			const yl = i.getObjectByName("yleft") as Points;
@@ -304,7 +314,7 @@ export namespace PlaneHelper {
 	 * @param scaleFactor the scale factor of the graph object
 	 * @param title the title for x and z axis
 	 */
-	export function addxzaxis(topbottom: Group[], scaleFactor: number, title = {x: 'x', z:'z'}) {
+	function addxzaxis(topbottom: Group[], scaleFactor: number, title = {x: 'x', z:'z'}) {
 		const invert = (1 / scaledelta)  / scaleFactor;
 		let averageOut = (average: Vector3, length: number, offset: Vector3, title: string) => {
 			average.multiplyScalar(1 / length).add(offset.multiplyScalar(invert));
