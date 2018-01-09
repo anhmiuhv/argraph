@@ -9,7 +9,7 @@
     "merge": "ts-merge ./helper/* ",
     "docs" : "typedoc helper --out docs/ --tsconfig tsconfig.json"
   },
-  "keywords": [  "augmented reality" , "data visualizations"]
+  "keywords": [  "augmented reality" , "data visualizations"],
   "author": "lin",
   "license": "MIT",
   "dependencies": {
