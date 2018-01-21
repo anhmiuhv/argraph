@@ -57,3 +57,12 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# develop
+develop/
+develop2/
+webpack.config.js
+.DS_Store
+.rpt2_cache/
+.vscode/
+*~

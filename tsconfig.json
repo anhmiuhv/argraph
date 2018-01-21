@@ -8,8 +8,7 @@
     "declaration": true
   },
   "files" :[
-  	"./helper/planehelper.ts"
-  	, "index.ts"
+  	"index.ts"
   	, "colormap.d.ts"
   ]
 }

@@ -1,7 +1,7 @@
 import {Graph} from "./planehelper"
 import {GraphInfo, SurfaceInfo, Axis} from "./datahelper"
 import { VertexColors, Face3, Vector3, Geometry, Color, Points, PointsMaterial, BufferAttribute, BufferGeometry, Scene, DirectionalLight, AmbientLight, SphereGeometry, MeshLambertMaterial, Mesh} from 'three'
-import colormap from 'colormap';
+import { createColormap } from 'colormap';
 
 export namespace RenderHelper {
     /**
@@ -67,7 +67,7 @@ export namespace RenderHelper {
 
         var height = surfaceinfo.height, width = surfaceinfo.width;
         let count = 0;
-        let cmap = colormap({ colormap: params.colormap || "viridis", nshades: height * width })
+        let cmap = createColormap({ colormap: params.colormap || "viridis", nshades: height * width })
         graph.getVerticesForDisplay(surfaceinfo.vertices).forEach(function (col) {
 
             geometry.vertices.push(col)

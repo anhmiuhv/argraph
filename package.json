@@ -1,15 +1,20 @@
 {
   "name": "argraph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "augmented reality visualization helper",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "merge": "ts-merge ./helper/* ",
-    "docs" : "typedoc helper --out docs/ --tsconfig tsconfig.json"
+    "merge": "ts-merge ./src/* ",
+    "docs": "typedoc src --out docs/ --tsconfig tsconfig.json"
   },
-  "keywords": [  "augmented reality" , "data visualizations"],
+  "keywords": [
+    "charts",
+    "graphs",
+    "3D",
+    "data visualizations"
+  ],
   "author": "lin",
   "license": "MIT",
   "dependencies": {
@@ -20,10 +25,19 @@
     "three": "^0.88.0"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.3.1",
+    "html-webpack-include-assets-plugin": "^1.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "rollup": "^0.54.1",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-typescript2": "^0.10.0",
+    "ts-loader": "^3.2.0",
     "ts-merge": "^0.5.0",
     "tslint": "^5.8.0",
     "typedoc": "^0.9.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
   },
   "repository": {
     "type": "git",

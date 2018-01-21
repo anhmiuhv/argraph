@@ -1,6 +1,6 @@
 # argraph
 
-A three.js and three.ar.js extention to draw augmented reality graph
+A three.js and three.ar.js extention to draw three dimensional graphs
 
 ## How  to compile
 
