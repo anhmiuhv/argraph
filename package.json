@@ -5,9 +5,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "merge": "ts-merge ./src/* ",
-    "docs": "typedoc src --out docs/ --tsconfig tsconfig.json"
+    "build": "rollup -c",
+    "docs": "typedoc src --out docs/ --tsconfig tsconfig.json",
+    "watch": "webpack --watch"
   },
   "keywords": [
     "charts",
@@ -19,9 +19,11 @@
   "license": "MIT",
   "dependencies": {
     "@types/d3-scale": "^1.0.10",
+    "@types/mathjs": "^0.0.37",
     "@types/three": "^0.84.35",
     "colormap": "^2.3.0",
     "d3-scale": "^1.0.7",
+    "mathjs": "^3.20.1",
     "three": "^0.88.0"
   },
   "devDependencies": {

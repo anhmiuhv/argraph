@@ -1,3 +1,3 @@
 declare module 'colormap' {
-	export function createColormap (params: any): number[][] | string[];
+    export function createColormap (params: any): number[][] | string[];
 }

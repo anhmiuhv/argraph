@@ -12,7 +12,6 @@ export interface ThreeEvent extends Event {
   pointerId: number;
 }
 
-
 export namespace EventHelper {
     /**
      * Event callback for graph. show the axis coordinates on the points
@@ -66,7 +65,7 @@ export namespace EventHelper {
                     } else {
                         this.INTERSECTED = null;
                     }
-                   
+                    
                 }
             }
         }
@@ -86,7 +85,7 @@ export namespace EventHelper {
                 this.graph = graph;
             }
             
-          
+            
             genrateOnTouch(this: ZoomableThreeEvent) {
                 let generalCallback = new GeneralThreeEvent(this.camera, this.graph).genrateOnTouch();
                 
@@ -108,50 +107,50 @@ export namespace EventHelper {
 
             generateOnMove(this: ZoomableThreeEvent) {
                 return (e: ThreeEvent) => {
-                     if (e.touches.length == 1) {
-                         var element = this.domElement === document ? this.domElement.body : this.domElement as HTMLElement;
-                         element = element || document.body;
-                         let deltaX = Math.abs(e.touches[0].clientX - this.prevPos.x) / (element.clientWidth) 
-                         if (e.touches[0].clientX > this.prevPos.x) {
+                        if (e.touches.length == 1) {
+                            var element = this.domElement === document ? this.domElement.body : this.domElement as HTMLElement;
+                            element = element || document.body;
+                            let deltaX = Math.abs(e.touches[0].clientX - this.prevPos.x) / (element.clientWidth) 
+                            if (e.touches[0].clientX > this.prevPos.x) {
 
-                             this.graph.graph.rotateY(100/180 * Math.PI * deltaX)
-                         } else {
-                             this.graph.graph.rotateY(-100/180 * Math.PI * deltaX)
-                         }
-                         let deltaY = Math.abs(e.touches[0].clientY - this.prevPos.y) / (element.clientHeight) 
+                                this.graph.graph.rotateY(100/180 * Math.PI * deltaX)
+                            } else {
+                                this.graph.graph.rotateY(-100/180 * Math.PI * deltaX)
+                            }
+                            let deltaY = Math.abs(e.touches[0].clientY - this.prevPos.y) / (element.clientHeight) 
 
-                         if (e.touches[0].clientY > this.prevPos.y) {
-                             this.graph.graph.translateY(-1 * deltaY)
-                         } else {
-                             this.graph.graph.translateY(1 * deltaY)
-                         }
-                         this.prevPos = new Vector2(e.touches[0].clientX, e.touches[0].clientY);
+                            if (e.touches[0].clientY > this.prevPos.y) {
+                                this.graph.graph.translateY(-1 * deltaY)
+                            } else {
+                                this.graph.graph.translateY(1 * deltaY)
+                            }
+                            this.prevPos = new Vector2(e.touches[0].clientX, e.touches[0].clientY);
                         
-                     }
+                        }
 
-                     if (e.touches.length == 2) {
-                       // Calculate the distance between the two pointers
-                       var curDiff = Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) + Math.pow(e.touches[0].clientY - e.touches[1].clientY, 2);
+                        if (e.touches.length == 2) {
+                        // Calculate the distance between the two pointers
+                        var curDiff = Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) + Math.pow(e.touches[0].clientY - e.touches[1].clientY, 2);
 
-                       if (this.prevDiff > 0) {
-                         if (curDiff > this.prevDiff) {
+                        if (this.prevDiff > 0) {
+                            if (curDiff > this.prevDiff) {
                         
-                           this.graph.graph.scale.multiplyScalar(1.05);
-                         }
-                         if (curDiff < this.prevDiff) {
-                           // The distance between the two pointers has decreased
-                           this.graph.graph.scale.multiplyScalar(0.95);
-                         }
-                       }
-                       this.prevDiff = curDiff;
-                       
-                     }
+                            this.graph.graph.scale.multiplyScalar(1.05);
+                            }
+                            if (curDiff < this.prevDiff) {
+                            // The distance between the two pointers has decreased
+                            this.graph.graph.scale.multiplyScalar(0.95);
+                            }
+                        }
+                        this.prevDiff = curDiff;
+                        
+                        }
                 }
             }
 
             generateOnUp(this: ZoomableThreeEvent) {
                 return (e: ThreeEvent) => {
-                     
+                        
                 }
             }
 

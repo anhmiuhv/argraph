@@ -163,7 +163,7 @@ export namespace PlaneHelper {
 		const alldelta = [deltax, deltay, deltaz];
 		const allscale = [scalex.range([ -deltax/2,  deltax/2]),
 						scaley.range([-deltay / 2, deltay / 2]),
-						 scalez.range([-deltaz / 2, deltaz / 2])];
+							scalez.range([-deltaz / 2, deltaz / 2])];
 		const allplane = [planetop, planebottom, planeleft, planeright, planefront, planeback];
 		return new Graph(graph, alldelta, allscale, allplane, 0.5 / m);
 	}
@@ -395,4 +395,5 @@ export namespace PlaneHelper {
 
 		}
 	}
+
 }

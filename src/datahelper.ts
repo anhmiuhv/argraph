@@ -1,5 +1,6 @@
-import { Vector3, Matrix3 } from 'three'
+import { Vector3, Matrix3, Vector } from 'three'
 import  { scaleLinear } from 'd3-scale';
+var math = require("mathjs")
 
 /**
  * Scatterplot info class
@@ -84,6 +85,42 @@ export class SurfaceInfo extends GraphInfo{
 	}
 
 } 
+
+/**
+ * Function plot
+ */
+export class FunctionInfo extends GraphInfo {
+	mathFunction: mathjs.EvalFunction
+	numberOfPointsX: number
+	numberOfPointsY: number
+	/**
+	 * create a Function Info object from a mathematicical expression
+	 * @param mathFunction the mathematical expression
+	 * @param param1 specifies 
+	 * 		- the range of X and Y and Z (min[X|Y|Z] , max[X|Y|Z])
+	 * 		- the resolution of X and Y (numberOfPointsX, numberOfPointsY)
+	 *  Default : param1 = { 
+	 * 			minX = -1, 
+	 * 			maxX = 1, 
+	 * 			minY = -1,
+	 *			maxY = 1,
+	 *			minZ = -1, 
+	 *			maxZ = 1, 
+	 *			numberOfPointsX = 20, 
+	 *			numberOfPointsY = 20}
+	 */
+	constructor(mathFunction: string, { minX = -1, maxX = 1, minY = -1
+		, maxY = 1, minZ = -1, maxZ = 1, numberOfPointsX = 20, numberOfPointsY = 20}) {
+		var data: Vector3[] = []
+		data.push(new Vector3(minZ, minY, minX))
+		data.push(new Vector3(maxZ, maxY, maxX))
+		super(data)
+		this.numberOfPointsX = numberOfPointsX
+		this.numberOfPointsY = numberOfPointsY
+		this.mathFunction = math.compile(mathFunction);
+		
+	}
+}
 
 export enum Axis {
 	x,y,z

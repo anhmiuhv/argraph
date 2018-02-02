@@ -2,7 +2,6 @@ import { Object3D, Camera, Points, Geometry } from 'three';
 import { Graph } from './planehelper'
 
 export namespace AnimationHelper {
-
 	/**
 	 * This helps show the closes x,y,z axis
 	 * @param graph Graph object
@@ -118,4 +117,5 @@ export namespace AnimationHelper {
 			this.b = camera.position.distanceTo(plane.position.clone().setFromMatrixPosition(plane.matrixWorld));
 		}
 	}
+
 }
