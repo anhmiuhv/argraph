@@ -16,7 +16,7 @@
     "data visualizations"
   ],
   "author": "lin",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "dependencies": {
     "@types/d3-scale": "^1.0.10",
     "@types/mathjs": "^0.0.37",
