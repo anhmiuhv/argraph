@@ -2,7 +2,7 @@
 
 A three.js and three.ar.js extention to draw three dimensional graphs. 
 
-#### [**Demo**](https://argraph.herokuapp.com)
+#### [**Demo**](https://sites.google.com/view/argraph/home)
 
 ## How  to compile
 
